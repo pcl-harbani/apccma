@@ -25,7 +25,7 @@
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2rem;
             color: #2d6a4f; /* Dark Green */
             animation: fadeIn 1.5s ease-in-out;
         }
@@ -47,7 +47,19 @@
             background: white;
         }
 
-       
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+		.header {
+			position: absolute;
+			top: 20px;
+			font-size: 2rem;
+			font-weight: bold;
+			color: #2d6a4f; /* Dark Green */
+		}
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
@@ -71,12 +83,16 @@
         }
     </style>
 </head>
-<body>
-    <h1>APCCMA - Coming Soon</h1>
-    <p>We are launching soon. Stay tuned!</p>
+<body>    
+	<h1>All Pakistan Cables and Conductors Manufacturers Association</h1>
+    <p>We are coming soon. Stay tuned!</p>
 	
     <div class="countdown" id="countdown">00d 00h 00m 00s</div>
 	<p>For queries email us at info@apccma.com</p>
+
+	<div class="footer">
+        Copyright © 2025 APCCMA - All Rights Reserved.
+    </div>
 
     <script>
         function countdownTimer() {
@@ -98,5 +114,9 @@
 
         countdownTimer();
     </script>
+	
+	
+	
+	
 </body>
 </html>
