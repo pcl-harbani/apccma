@@ -1,128 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APCCMA - Coming Soon</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #f4f4f4;
-            color: #333;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            color: #2d6a4f; /* Dark Green */
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin: 10px 0 20px;
-        }
-
-        .countdown {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #000;
-            padding: 10px;
-            border: 2px solid #2d6a4f;
-            border-radius: 10px;
-            display: inline-block;
-            margin-top: 10px;
-            background: white;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 10px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-		.header {
-			position: absolute;
-			top: 20px;
-			font-size: 2rem;
-			font-weight: bold;
-			color: #2d6a4f; /* Dark Green */
-		}
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .countdown {
-                font-size: 1.5rem;
-                padding: 8px;
-            }
-
-            input[type="email"] {
-                width: 200px;
-            }
-        }
-    </style>
-</head>
-<body>    
-	<img src="APCCMA Logo Final Logo.png" alt="APCCMA Logo" style="max-width: 200px; margin-bottom: 20px;" />
-	
-    <p>We are coming soon. Stay tuned!</p>
-	
-    <div class="countdown" id="countdown">00d 00h 00m 00s</div>	
-	<p>For queries email us at info@apccma.com</p>
-
-	<div class="footer">
-        Copyright © 2025 APCCMA - All Rights Reserved.
-    </div>
-
-    <script>
-       function countdownTimer() {
-        const launchDate = new Date("2025-05-01T00:00:00").getTime();
-
-        setInterval(() => {
-            const now = new Date().getTime();
-            const timeLeft = launchDate - now;
-
-            if (timeLeft < 0) {
-                document.getElementById("countdown").innerHTML = "We're live!";
-                return;
-            }
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML = 
-                `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }, 1000);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APCCMA - All Pakistan Cables & Conductors Manufacturers Association</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f9f9f9 0%, #e6e6e6 100%);
+      background-attachment: fixed;
+      color: #333;
+      scroll-behavior: smooth;
     }
+    header {
+      background-color: #ffffffcc;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+    header img {
+      height: 60px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #333;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 3px;
+      background-color: #888;
+      transition: width 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+    h1, h2 {
+      color: #222;
+      margin-bottom: 1rem;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background-color: #888;
+      margin-top: 0.5rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    ul li {
+      margin-bottom: 0.75rem;
+    }
+    a[href^="mailto"] {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a[href^="mailto"]:hover {
+      text-decoration: underline;
+    }
+    .download-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #888;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .download-button:hover {
+      background-color: #666;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      nav a {
+        padding: 0.75rem 1rem;
+        display: block;
+      }
+      nav.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#"><img src="APCCMA Logo Final Logo.png" alt="APCCMA Logo"></a>
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#executive">Executive Committee</a>
+      <a href="#members">Members</a>
+      <a href="#news">News</a>
+      <a href="#membership">Membership</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    countdownTimer();
-    </script>
-	
-	
-	
-	
+  <section>
+    <h1>All Pakistan Cables & Conductors Manufacturers Association (APCCMA)</h1>
+    <p class="lead">Voice of the Cable and Conductors Industry in Pakistan</p>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>All Pakistan Cables and Conductors Manufacturers Association (APCCMA) was incorporated in 2009. APCCMA targets to protect and promote the interest of all persons dealing with Cables & Conductors Manufacturing. Its further objective is to protect and promote the trade and to secure cooperation among all manufacturers of the cable industry for improving working and products in the country.</p>
+    <p>APCCMA represents the sector before federal and provincial governments or other authorities on behalf of the industry, providing assistance, information, and advice to support the promotion of fair market trade and industry practices.</p>
+    <p>As the leading voice of the sector, APCCMA is committed to promoting collaboration, advocating for industry interests, and driving sustainable growth. Its steadfast dedication aligns with Pakistan's economic goals and development ambitions, establishing APCCMA as a vital force for prosperity and success in the Cable and Conductors sector.</p>
+  </section>
+
+  <section id="executive">
+    <h2>Executive Committee</h2>
+    <ul>
+      <li><strong>Fahd Kamal Chinoy</strong> – CEO – Pakistan Cables Limited</li>
+      <li><strong>Kamal Mahmood Amjad Mian</strong> – Director – Fast Cables Limited</li>
+      <li><strong>Raza Elahi</strong> – Director – Steel Complex (Pvt.) Ltd</li>
+    </ul>
+  </section>
+
+  <section id="members">
+    <h2>Members</h2>
+    <a class="download-button" href="APCCMA Members List.xlsx" download>Download Members List</a>
+  </section>
+
+  <section id="news">
+    <h2>News and Events</h2>
+    <ul>
+      <li><a href="APCCMA south regional office letters.pdf" download>New Regional Office</a></li>
+      <li><a href="CTC AOA for 20240414_2533072 CTC.pdf" download>Article of Association</a></li>
+      <li><a href="CTC MOA for 20240414_2533072 CTC.pdf" download>Memorandum of Association</a></li>
+      <li><a href="Incorporation Letter for 20240414_2533072.pdf" download>Certificate of Incorporation</a></li>
+    </ul>
+  </section>
+
+  <section id="membership">
+    <h2>Membership</h2>
+    <a class="download-button" href="Membership-Form.docx" download>Download Membership Form</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>All Pakistan Cables and Conductors Manufacturers Association</strong></p>
+    <p>North Office: 194-Y COMMERCIAL PHASE 3 DHA LAHORE</p>
+    <p>South Office: B-21 SITE, Karachi</p>
+    <p>Email: <a href="mailto:info@apccma.com">info@apccma.com</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 APCCMA. All rights reserved.
+  </footer>
 </body>
 </html>
